@@ -40,4 +40,35 @@ class FashionController extends Controller
 
         return redirect('/fashion');
     }
+
+    function edit(Request $request){
+        $data['fashion'] = Fashion::find($request->id);
+        return view('fashion.update', $data);
+    }
+    function update(Request $request){
+        $filename = '';
+
+        if ($request->file('foto')) {
+            $extfile = $request->file('foto')->getClientOriginalExtension();
+            $filename = time() . '.' . $extfile;
+            $request->file('foto')->storeAs('foto', $filename);
+        }
+
+        Fashion::where('id', $request->id)->update([
+            'foto' => $filename,
+            'title' => $request->title,
+            'date' => $request->date,
+            'desc' => $request->desc,
+        ]);
+
+        return redirect('/fashion');
+    }
+
+    function delete(Request $request)
+    {
+        Fashion::where('id', $request->id)->delete();
+        return redirect('/fashion');
+    }
+
+    
 }

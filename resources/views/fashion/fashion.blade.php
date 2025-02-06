@@ -67,8 +67,8 @@
                                 <td class="text-truncate">{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="/update_topic/{{ $item->id }}" class="btn btn-info btn-sm">Update</a>
-                                        <a href="/delete_topic/{{ $item->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="/update_fashion/{{ $item->id }}" class="btn btn-info btn-sm">Update</a>
+                                        <a href="/delete_fashion/{{ $item->id }}" class="btn btn-danger btn-sm">Delete</a>
                                     </div>
                                 </td>
                             </tr>

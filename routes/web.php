@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FashionController;
 use App\Http\Controllers\TopicController;
+use App\Models\Fashion;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,6 @@ Route::get('/delete_topic/{id}',[TopicController::class,'delete']);
 Route::get('/fashion', [FashionController::class, 'show']);
 Route::get('/create_fashion', [FashionController::class, 'create']);
 Route::post('/create_fashion', [FashionController::class, 'add']);
+Route::get('/update_fashion/{id}',[FashionController::class,'edit']);
+Route::post('/update_fashion/{id}',[FashionController::class,'update']);
+Route::get('/delete_fashion/{id}',[FashionController::class,'delete']);
