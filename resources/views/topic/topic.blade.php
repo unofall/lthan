@@ -1,4 +1,4 @@
-@extends('template.navbar-admin')
+@extends('template.navbar')
 @section('content')
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

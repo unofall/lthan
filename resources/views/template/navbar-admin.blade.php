@@ -64,10 +64,10 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/travel">Travel</a></li>
                                 <li><a class="dropdown-item" href="/topic">Topic</a></li>
-                                <li><a class="dropdown-item" href="search.html">Search</a></li>
+                                {{-- <li><a class="dropdown-item" href="search.html">Search</a></li>
                                 <li><a class="dropdown-item" href="archive.html">Archive</a></li>
                                 <li><a class="dropdown-item" href="generic.html">Generic</a></li>
-                                <li><a class="dropdown-item" href="elements.html">Elements</a></li>
+                                <li><a class="dropdown-item" href="elements.html">Elements</a></li> --}}
                             </ul>
                         </li>
                     </ul>

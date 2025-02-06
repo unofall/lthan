@@ -4,6 +4,7 @@
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <!-- start banner Area -->
     <section class="banner-area relative" id="home" data-parallax="scroll"
         data-image-src={{ asset('assets/img/Raja_Ampat,_Mutiara_Indah_di_Timur_Indonesia.jpg') }}>
@@ -38,7 +39,7 @@
     <section class="category-area section-gap" id="news">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-70 col-lg-8">
+                <div class="menu-content pb-40 col-lg-8">
                     <div class="title text-center">
                         <h1 class="mb-10" data-aos="fade-up" data-aos-delay="400">Latest News from all categories</h1>
                         <p data-aos="fade-up" data-aos-delay="500">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -56,7 +57,7 @@
                     </div>
                 @else
                     @foreach ($blog as $key => $item)
-                        <div class="item single-cat">
+                        <div class="item single-cat" data-aos="fade-up" data-aos-delay="{{ 600 + $key * 100 }}">
                             <a href="/detail/{{ $item->id }}">
                                 <img class="rounded"
                                     style="min-width: 150px; height: 180px; object-fit: cover; object-position: top"
@@ -73,46 +74,49 @@
     </section>
     <!-- End category Area -->
 
-    <!-- Start travel Area -->
+    <!-- Start Topic Area -->
     <section class="travel-area section-gap" id="travel">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
                     <div class="title text-center">
-                        <h1 class="mb-10">Hot topics from Travel Section</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        <h1 class="mb-10" data-aos="fade-up" data-aos-delay="300">Hot topics from Travel Section</h1>
+                        <p data-aos="fade-up" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($topic as $key => $item)
-                    <div class="col-lg-6 travel-left">
-                        <div class="single-travel media pb-70" data-aos="fade-up">
-                            <img class="img-fluid d-flex  mr-3 rounded"
-                                style="min-width: 150px; height: 200px; object-fit: cover; object-position: top"
-                                src={{ asset('storage/foto/' . $item->foto) }} alt="">
+            <div class="row d-flex">
+                    @foreach ($topic as $key => $item)
+                        <div class="col-md-6 travel-left" style="padding: 50px">
+                            <div class="single-travel media pb-70" data-aos="fade-up" data-aos-delay="{{ 600 + $key * 100 }}">
+                                <img class="img-fluid  mr-2 rounded"
+                                    style="width: 120px; height: 170px; object-fit: cover; object-position: top"
+                                    src={{ asset('storage/foto/' . $item->foto) }} alt="">
 
-                            <div class="media-body">
-                                <div class="d-flex">
-                                    <div class="col-md-6">
-                                        <h4 class="mt-0 mb-1" style="margin-left: -13px"><a href="">{{ $item->title }}</a></h4>
+                                <div class="media-body" style="margin-left: 15px">
+                                    <div class="d-flex justify-content-between">
+
+                                        <h4 class="mt-0 mb-3" style="margin-left: 2px"><a
+                                                href="">{{ $item->title }}</a></h4>
+
+                                        <h4 class="mt-1" style="font-size: 12px; margin-left: 12px"><a
+                                                href="">{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}</a>
+                                        </h4>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h4 class="mt-1" style="font-size: 14px"><a href="">{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}</a></h4>
+                                    <p>{{ $item->desc }}</p>
+                                    <div class="meta-bottom d-flex justify-content-between mt-quto">
+                                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
+                                        <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
                                     </div>
-                                </div>
-                                <p>{{ $item->desc }}</p>
-                                <div class="meta-bottom d-flex justify-content-between">
-                                    <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                                    <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
                                 </div>
                             </div>
                         </div>
-                @endforeach
+                    @endforeach
             </div>
             {{-- <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a> --}}
-        </div>
+
         </div>
     </section>
     <!-- End travel Area -->
@@ -123,66 +127,33 @@
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
                     <div class="title text-center">
-                        <h1 class="mb-10">Fashion News This Week</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        <h1 class="mb-10" data-aos="fade-up" data-aos-delay="300">Fashion News This Week</h1>
+                        <p data-aos="fade-up" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 single-fashion">
-                    <img class="img-fluid" src={{ asset('templates/img/t1.jpg') }} alt="">
-                    <p class="date">10 Jan 2018</p>
-                    <h4><a href="#">Addiction When Gambling
-                            Becomes A Problem</a></h4>
-                    <p>
-                        inappropriate behavior ipsum dolor sit amet, consectetur.
-                    </p>
-                    <div class="meta-bottom d-flex justify-content-between">
-                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                        <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
+                @foreach ($fashion as $key => $item)
+                    <div class="col-lg-3 col-md-6 single-fashion" data-aos="fade-up"
+                        data-aos-delay="{{ 600 + $key * 100 }}">
+                        <img class="img-fluid rounded" src={{ asset('storage/foto/' . $item->foto) }} alt="">
+                        <p class="mt-3" style="font-weight: 600">
+                            {{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}</p>
+                        <h4><a href="#">{{ $item->title }}</a></h4>
+                        <p>
+                            {{ $item->desc }}
+                        </p>
+                        <div class="meta-bottom d-flex justify-content-between">
+                            <p><span class="lnr lnr-heart"></span> 15 Likes</p>
+                            <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 single-fashion">
-                    <img class="img-fluid" src={{ asset('templates/img/t1.jpg') }} alt="">
-                    <p class="date">10 Jan 2018</p>
-                    <h4><a href="#">Addiction When Gambling
-                            Becomes A Problem</a></h4>
-                    <p>
-                        inappropriate behavior ipsum dolor sit amet, consectetur.
-                    </p>
-                    <div class="meta-bottom d-flex justify-content-between">
-                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                        <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 single-fashion">
-                    <img class="img-fluid" src={{ asset('templates/img/t1.jpg') }} alt="">
-                    <p class="date">10 Jan 2018</p>
-                    <h4><a href="#">Addiction When Gambling
-                            Becomes A Problem</a></h4>
-                    <p>
-                        inappropriate behavior ipsum dolor sit amet, consectetur.
-                    </p>
-                    <div class="meta-bottom d-flex justify-content-between">
-                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                        <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 single-fashion">
-                    <img class="img-fluid" src={{ asset('templates/img/t1.jpg') }} alt="">
-                    <p class="date">10 Jan 2018</p>
-                    <h4><a href="#">Addiction When Gambling
-                            Becomes A Problem</a></h4>
-                    <p>
-                        inappropriate behavior ipsum dolor sit amet, consectetur.
-                    </p>
-                    <div class="meta-bottom d-flex justify-content-between">
-                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                        <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-                    </div>
-                </div>
-                <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a>
+                @endforeach
+
+
+                {{-- <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a> --}}
             </div>
         </div>
     </section>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Fashion;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,7 +13,8 @@ class BlogController extends Controller
     function index(){
         $data['blog'] = Blog::all();
         $topic = Topic::all();
-        return view('index', $data, compact('topic'));
+        $fashion = Fashion::all();
+        return view('index', $data, compact('topic','fashion'));
     }
 
     function show(){

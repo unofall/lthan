@@ -8,7 +8,7 @@
             font-family: Poppins, sans-serif;
         }
 
-        .table-responsive {         
+        .table-responsive {
             margin-top: 20px;
         }
 
@@ -38,9 +38,9 @@
 
     <body>
         <div class="container page-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3>Travel Blog List</h3>
-                <a href="/create" class="btn btn-primary">+ Create Blog</a>
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h3>Topic Blog List</h3>
+                <a href="/create_fashion" class="btn btn-primary">+ Create Blog Fashion</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
@@ -50,12 +50,12 @@
                             <th>Foto</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Location</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($blog as $key => $item)
+                        @foreach ($fashion as $key => $item)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>
@@ -63,12 +63,12 @@
                                         alt="Blog Image">
                                 </td>
                                 <td>{{ $item->title }}</td>
-                                <td class="text-truncate">{{ Str::limit($item->description, 50, '...') }}</td>
-                                <td class="text-truncate">{{ Str::limit($item->location, 50, '...') }}</td>
+                                <td class="text-truncate">{{ Str::limit($item->desc, 50, '...') }}</td>
+                                <td class="text-truncate">{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="/update/{{ $item->id }}" class="btn btn-info btn-sm">Update</a>
-                                        <a href="/delete/{{ $item->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="/update_topic/{{ $item->id }}" class="btn btn-info btn-sm">Update</a>
+                                        <a href="/delete_topic/{{ $item->id }}" class="btn btn-danger btn-sm">Delete</a>
                                     </div>
                                 </td>
                             </tr>

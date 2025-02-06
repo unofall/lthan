@@ -58,12 +58,12 @@
                                 Pages
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/travel">Table</a></li>
-                                <li><a class="dropdown-item" href="/topic">Category</a></li>
-                                <li><a class="dropdown-item" href="search.html">Search</a></li>
-                                <li><a class="dropdown-item" href="archive.html">Archive</a></li>
+                                <li><a class="dropdown-item" href="/travel">Travel</a></li>
+                                <li><a class="dropdown-item" href="/topic">Topic</a></li>
+                                <li><a class="dropdown-item" href="/fashion">Fashion</a></li>
+                                {{-- <li><a class="dropdown-item" href="archive.html">Archive</a></li>
                                 <li><a class="dropdown-item" href="generic.html">Generic</a></li>
-                                <li><a class="dropdown-item" href="elements.html">Elements</a></li>
+                                <li><a class="dropdown-item" href="elements.html">Elements</a></li> --}}
                             </ul>
                         </li>
                     </ul>
@@ -81,7 +81,7 @@
     </div>
 
     <!-- start footer Area -->
-    <footer class="footer-area section-gap mt-5">
+    {{-- <footer class="footer-area section-gap mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-12">
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3  col-md-12">
+                <div class="col-lg-3  col-md-12">
                     <div class="single-footer-widget mail-chimp">
                         <h6 class="mb-20">Instragram Feed</h6>
                         <ul class="instafeed d-flex flex-wrap">
@@ -138,18 +138,16 @@
                             <li><img src="img/i8.jpg" alt=""></li>
                         </ul>
                     </div>
-                </div> --}}
+                </div>
             </div>
 
             <div class="row footer-bottom d-flex justify-content-between">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 <p class="col-lg-8 col-sm-12 footer-text">Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
                     </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
                         aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                 </p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 <div class="col-lg-4 col-sm-12 footer-social">
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -158,6 +156,6 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> --}}
     <!-- End footer Area -->
 </body>
