@@ -9,5 +9,9 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id'; // Tetap menggunakan 'id'
+    public $incrementing = false; // Matikan auto-increment
+    protected $keyType = 'string'; // UUID adalah string
+
     protected $guarded = [];
 }

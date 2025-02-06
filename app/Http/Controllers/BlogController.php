@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Fashion;
 use App\Models\Topic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
@@ -44,13 +45,14 @@ class BlogController extends Controller
         }
 
         Blog::create([
+            'id' => Str::uuid(),
             'foto' => $filename,
             'title' => $request->title,
             'description' => $request->description,
             'location' => $request->location
         ]);
 
-        return redirect('/travel    ');
+        return redirect('/travel');
 
     }
 

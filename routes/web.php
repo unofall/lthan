@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FashionController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TopicController;
 use App\Models\Fashion;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('index');
 // });
+Route::get('/',[LoginController::class,'login']);
+Route::post('/auth',[LoginController::class,'auth']);
 
-Route::get('/',[BlogController::class,'index']);
+
+
+
+Route::get('/show',[BlogController::class,'index']);
 Route::get('/travel',[BlogController::class,'show']);
 Route::get('/create',[BlogController::class,'create']);
 Route::post('/add',[BlogController::class,'add']);
